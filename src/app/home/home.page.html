@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item color="{{selectionDayNight}}">
+    <ion-input label="Solid input" placeholder="Enter text"></ion-input>
+  </ion-item>
+
+  <br>
+
+  <ion-radio-group value="dayAndNight" [(ngModel)]="selectionDayNight">
+    <ion-item>
+      <ion-radio value="light">day</ion-radio><br />
+    </ion-item>
+    <ion-item>
+      <ion-radio value="dark">night</ion-radio><br />
+    </ion-item>
+  </ion-radio-group>
+
+  <br>
+
+  <ion-range aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="0" [max]="10"></ion-range>
+
+  <br>
+
+  <ion-radio-group value="colors">
+    <ion-radio id="success" color="success" value="success"></ion-radio><br />
+    <ion-radio id="warning" color="warning" value="warning"></ion-radio><br />
+    <ion-radio id="danger" color="danger" value="danger"></ion-radio><br />
+  </ion-radio-group>
+
+  <ion-toast trigger="success" message="success" [duration]="3000"></ion-toast>
+  <ion-toast trigger="warning" message="warning" [duration]="3000"></ion-toast>
+  <ion-toast trigger="danger" message="danger" [duration]="3000"></ion-toast>
+
+  <div id="container">
+    <strong>Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  </div>
+</ion-content>

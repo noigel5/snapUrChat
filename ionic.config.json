@@ -1,0 +1,7 @@
+{
+  "name": "snapUrChat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
