@@ -1,3 +1,18 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="map" href="map/map">
+        <ion-icon aria-hidden="true" name="navigate-circle-outline"></ion-icon>
+        Map
+      </ion-tab-button>
+      <ion-tab-button tab="camera" href="camera/camera">
+        <ion-icon aria-hidden="true" name="camera-outline"></ion-icon>
+        Camera
+      </ion-tab-button>
+      <ion-tab-button tab="picture-overview" href="picture-overview/picture-overview">
+        <ion-icon aria-hidden="true" name="construct-outline"></ion-icon>
+        Pictures
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-app>
