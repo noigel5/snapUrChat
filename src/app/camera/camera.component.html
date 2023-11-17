@@ -4,5 +4,22 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div class="general-content">here should be your camera</div>
+  <div class="general-content">
+    <ion-card>
+
+      <img *ngIf="imageUrl" [src]="imageUrl" />
+
+      <ion-button fill="clear"
+                  (click)="takePicture()">
+        Foto aufnehmen
+      </ion-button>
+
+      <ion-button fill="clear"
+                  *ngIf="imageUrl"
+                  (click)="resetPicture()">
+        Reset
+      </ion-button>
+
+    </ion-card>
+  </div>
 </ion-content>

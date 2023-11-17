@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular'
 import { FormsModule } from '@angular/forms'
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-camera',
@@ -9,13 +11,33 @@ import { FormsModule } from '@angular/forms'
   standalone: true,
   imports: [
     IonicModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ]
 })
-export class CameraComponent  implements OnInit {
+export class CameraComponent {
+
+  imageUrl : string | undefined
 
   constructor() { }
 
-  ngOnInit() {}
+  takePicture = async () => {
 
+    // const permissionStatus = await Camera.requestPermissions()
+
+    // console.log(permissionStatus)
+
+    const image = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100
+    });
+
+    this.imageUrl = image.webPath;
+
+  };
+
+  resetPicture () {
+    this.imageUrl = ''
+  }
 }

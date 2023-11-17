@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EnvironmentInjector, inject } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms'
 import { addIcons } from 'ionicons';
-import { triangle, ellipse, square } from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +13,7 @@ import { triangle, ellipse, square } from 'ionicons/icons';
   ],
 })
 export class AppComponent {
-  constructor() {
-    addIcons({triangle, ellipse, square})
-  }
+  public environmentInjector = inject(EnvironmentInjector);
+
+  constructor() {}
 }
