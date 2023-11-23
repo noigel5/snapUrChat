@@ -2,6 +2,7 @@ import { Component, EnvironmentInjector, inject } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms'
 import { addIcons } from 'ionicons';
+import { navigateCircleOutline, cameraOutline, albumsOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,11 @@ import { addIcons } from 'ionicons';
   imports: [
     IonicModule,
     FormsModule
-  ],
+  ]
 })
 export class AppComponent {
-  public environmentInjector = inject(EnvironmentInjector);
 
-  constructor() {}
+  constructor() {
+    addIcons( {navigateCircleOutline, cameraOutline, albumsOutline } )
+  }
 }
