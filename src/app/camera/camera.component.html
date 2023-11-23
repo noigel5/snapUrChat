@@ -7,19 +7,40 @@
   <div class="general-content">
     <ion-card>
 
-      <img *ngIf="imageUrl" [src]="imageUrl" />
+      <img *ngIf="bildUrl" [src]="bildUrl"/>
 
       <ion-button fill="clear"
-                  (click)="takePicture()">
+                  (click)="takePicture()"
+                  (click)="getCurrentPosition()">
         Foto aufnehmen
       </ion-button>
 
       <ion-button fill="clear"
-                  *ngIf="imageUrl"
+                  *ngIf="bildUrl"
                   (click)="resetPicture()">
         Reset
       </ion-button>
 
+      <form (ngSubmit)="saveBild(bildForm.value)" [formGroup]="bildForm" *ngIf="bildUrl">
+        <ion-input
+          label="Beschreibung"
+          labelPlacement="floating"
+          errorText="Beschreibung fehlt"
+          formControlName="beschreibung"
+          [required]="true"
+        ></ion-input>
+        <ion-input
+          label="Nutzername"
+          labelPlacement="floating"
+          errorText="Nutzername fehlt"
+          formControlName="nutzername"
+          [required]="true"
+        ></ion-input>
+
+        <ion-button type="cancel" (click)="resetPicture()" fill="clear">Abbrechen</ion-button>
+
+        <ion-button type="submit" fill="clear">Speichern</ion-button>
+      </form>
     </ion-card>
   </div>
 </ion-content>
