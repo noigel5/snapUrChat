@@ -39,7 +39,8 @@
 
         <ion-button type="cancel" (click)="resetPicture()" fill="clear">Abbrechen</ion-button>
 
-        <ion-button type="submit" fill="clear">Speichern</ion-button>
+        <ion-button id="open-toast" type="submit" fill="clear">Speichern</ion-button>
+        <ion-toast trigger="open-toast" message="gespeichert" [duration]="5000"></ion-toast>
       </form>
     </ion-card>
   </div>
